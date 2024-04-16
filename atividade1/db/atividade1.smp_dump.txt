@@ -1,7 +1,9 @@
 
 State Machine - |Block1|robo_linha:inst2|fstate
-Name fstate.reto fstate.virandoEsquerda fstate.virandoDireita fstate.parado 
-fstate.parado 0 0 0 0 
-fstate.virandoDireita 0 0 1 1 
-fstate.virandoEsquerda 0 1 0 1 
-fstate.reto 1 0 0 1 
+Name fstate.perdeuEsquerda fstate.perdeuDireita fstate.reto fstate.virandoEsquerda fstate.virandoDireita fstate.parado 
+fstate.parado 0 0 0 0 0 0 
+fstate.virandoDireita 0 0 0 0 1 1 
+fstate.virandoEsquerda 0 0 0 1 0 1 
+fstate.reto 0 0 1 0 0 1 
+fstate.perdeuDireita 0 1 0 0 0 1 
+fstate.perdeuEsquerda 1 0 0 0 0 1 

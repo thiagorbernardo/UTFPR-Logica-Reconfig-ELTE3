@@ -40,8 +40,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "estado[1..0]" (rect 0 0 44 12)(font "Arial" ))
-		(text "estado[1..0]" (rect 21 59 65 71)(font "Arial" ))
+		(text "estado[2..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "estado[2..0]" (rect 21 59 67 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
