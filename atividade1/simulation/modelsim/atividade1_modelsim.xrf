@@ -1,5 +1,5 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/eduar/Downloads/Aulas Logica/UTFPR-Logica-Reconfig-ELTE3/atividade1/atividade1.smf
+source_file = 1, atividade1.smf
 source_file = 1, atividade1.vhd
 source_file = 1, C:/Users/eduar/Downloads/Aulas Logica/UTFPR-Logica-Reconfig-ELTE3/atividade1/Block1.bdf
 source_file = 1, numerico.vhd
