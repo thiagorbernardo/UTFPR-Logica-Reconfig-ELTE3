@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+ENTITY rom IS
+    GENERIC (bits: INTEGER := 8;
+             words: INTEGER := 8);
+    PORT (addr: IN INTEGER RANGE 0 TO words-1;
+          data: OUT STD_LOGIC_VECTOR(bits-1 DOWNTO 0));
+END rom;
+
+ARCHITECTURE rom OF rom IS
+    TYPE vector_array IS ARRAY (0 TO words-1) OF STD_LOGIC_VECTOR(bits-1 DOWNTO 0);
+    CONSTANT memory: vector_array := 
+        (X"00",
+         X"02",
+         X"04",
+         X"08",
+         X"10",
+         X"20",
+         X"40",
+         X"80");
+BEGIN
+    data <= memory(addr);
+END rom;

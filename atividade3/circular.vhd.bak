@@ -1,0 +1,74 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity circular_display is
+    port (
+        clk: in std_logic;
+        reset: in std_logic;
+        disp1: out std_logic_vector(6 downto 0);
+        disp2: out std_logic_vector(6 downto 0);
+        disp3: out std_logic_vector(6 downto 0);
+        disp4: out std_logic_vector(6 downto 0)
+    );
+end circular_display;
+
+architecture behv of circular_display is
+    signal count: std_logic_vector(3 downto 0);
+    signal char1, char2, char3, char4: std_logic_vector(3 downto 0);
+    signal decoded1, decoded2, decoded3, decoded4: std_logic_vector(6 downto 0);
+begin
+    -- Instantiate the 4-bit counter
+    counter_inst: entity work.contador_4bit
+        port map (
+            clk => clk,
+            count => count
+        );
+
+    -- Instantiate the ROM
+    rom_inst: entity work.rom
+        port map (
+            addr => count,
+            data => char1
+        );
+
+    -- Logic to determine the addresses for each display
+    process(count)
+    begin
+        char2 <= char1 + 1;
+        char3 <= char1 + 2;
+        char4 <= char1 + 3;
+    end process;
+
+    -- Instantiate the decoders for each display
+    decoder1: entity work.decodificador_7seg
+        port map (
+            code => char1,
+            output => decoded1
+        );
+
+    decoder2: entity work.decodificador_7seg
+        port map (
+            code => char2,
+            output => decoded2
+        );
+
+    decoder3: entity work.decodificador_7seg
+        port map (
+            code => char3,
+            output => decoded3
+        );
+
+    decoder4: entity work.decodificador_7seg
+        port map (
+            code => char4,
+            output => decoded4
+        );
+
+    -- Assign the decoded outputs to the displays
+    disp1 <= decoded1;
+    disp2 <= decoded2;
+    disp3 <= decoded3;
+    disp4 <= decoded4;
+
+end behv;
