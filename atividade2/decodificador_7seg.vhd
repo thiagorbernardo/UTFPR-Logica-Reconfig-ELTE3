@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity decodificador_7seg is
+    port (
+        code: in std_logic_vector(3 downto 0);
+        output: out std_logic_vector(6 downto 0)
+    );
+end decodificador_7seg;
+
+architecture behv of decodificador_7seg is
+begin
+    process (code)
+    begin
+        case code is
+            when "0000" => output <= "1000000"; -- 0
+            when "0001" => output <= "1111001"; -- 1
+            when "0010" => output <= "0100100"; -- 2
+            when "0011" => output <= "0110000"; -- 3
+            when "0100" => output <= "0011001"; -- 4
+            when "0101" => output <= "0010010"; -- 5
+            when "0110" => output <= "0000010"; -- 6
+            when "1011" => output <= "1000010"; -- G
+            when "1000" => output <= "1110111"; -- _
+            when "1001" => output <= "0010000"; -- 9
+            when "1010" => output <= "0001000"; -- A
+            when "1100" => output <= "1000110"; -- C
+            when "1101" => output <= "1000001"; -- U
+            when "1110" => output <= "1000111"; -- L
+            when "1111" => output <= "1111001"; -- I
+            when others => output <= "1111111"; -- desligado
+        end case;
+    end process;
+end behv;
