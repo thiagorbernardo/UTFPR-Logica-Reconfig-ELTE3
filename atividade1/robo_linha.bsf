@@ -52,6 +52,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 80)(pt 16 80))
 	)
 	(port
+		(pt 0 96)
+		(input)
+		(text "timeout" (rect 0 0 36 12)(font "Arial" ))
+		(text "timeout" (rect 21 91 57 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
 		(pt 144 32)
 		(output)
 		(text "velMotorD" (rect 0 0 50 12)(font "Arial" ))
@@ -78,6 +85,13 @@ refer to the applicable agreement for further details.
 		(text "direita" (rect 0 0 29 12)(font "Arial" ))
 		(text "direita" (rect 94 75 123 87)(font "Arial" ))
 		(line (pt 144 80)(pt 128 80))
+	)
+	(port
+		(pt 144 96)
+		(output)
+		(text "perdido" (rect 0 0 35 12)(font "Arial" ))
+		(text "perdido" (rect 88 91 123 103)(font "Arial" ))
+		(line (pt 144 96)(pt 128 96))
 	)
 	(drawing
 		(rectangle (rect 16 16 128 112))
