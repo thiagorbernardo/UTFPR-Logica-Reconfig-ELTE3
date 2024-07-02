@@ -180,18 +180,18 @@ begin
 			
 			case Ball_direction is
 			
-				-- Ball directions
+				-- Direcciones, 6 en total, 4 diagonales y 2 horizontales
 				
-				when 0 => Ball_pos_x <= Ball_pos_x + 1; -- Up / Right
+				when 0 => Ball_pos_x <= Ball_pos_x + 1;
 							 Ball_pos_y <= Ball_pos_y - 1;
-				when 1 => Ball_pos_x <= Ball_pos_x - 1; -- Up / Left
+				when 1 => Ball_pos_x <= Ball_pos_x - 1;
 							 Ball_pos_y <= Ball_pos_y - 1;
-				when 2 => Ball_pos_x <= Ball_pos_x - 1; -- Down / Left
+				when 2 => Ball_pos_x <= Ball_pos_x - 1;
 							 Ball_pos_y <= Ball_pos_y + 1;
-				when 3 => Ball_pos_x <= Ball_pos_x + 1; -- Down / Right
+				when 3 => Ball_pos_x <= Ball_pos_x + 1;
 						    Ball_pos_y <= Ball_pos_y + 1;
-				when 4 => Ball_pos_x <= Ball_pos_x + 1; -- Right
-				when 5 => Ball_pos_x <= Ball_pos_x - 1; -- Left
+				when 4 => Ball_pos_x <= Ball_pos_x + 1;
+				when 5 => Ball_pos_x <= Ball_pos_x - 1;
 			end case;
 			
 			--Bounce with the board edges

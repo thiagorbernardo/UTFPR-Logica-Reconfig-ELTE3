@@ -83,7 +83,7 @@ begin
 		end if;
 	end process;
 	
-	-- Dena generator (enables to diplay on the screen)
+	-- Display enable
 	
 	dena <= Hactive and Vactive;
 	

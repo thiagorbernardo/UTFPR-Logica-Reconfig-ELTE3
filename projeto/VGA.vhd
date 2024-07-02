@@ -6,7 +6,7 @@ entity VGA is
 	generic(
 	
 		div:integer := 2;
-		div_paddle : integer := 415000; -- 120.5 Hz
+		div_paddle : integer := 250000; -- 120.5 Hz
 		
 		div_ball1 : integer := 415000; -- 120.5 Hz
 		div_ball2 : integer := 370000; -- 135.1 Hz
